@@ -64,13 +64,9 @@
 #define MDSS_FB_NUM 2
 #endif
 
-<<<<<<< HEAD
-=======
 #define SMARTDIM_MIN 40
 #define SMARTDIM_PCC_MIN 6600
 #define PCC_MAX 32768
-
->>>>>>> acd447140b2... mdss: initial smart dim implementation
 #define MAX_FBI_LIST 32
 static struct fb_info *fbi_list[MAX_FBI_LIST];
 static int fbi_list_index;
@@ -286,8 +282,6 @@ static void mdss_fb_set_bl_brightness(struct led_classdev *led_cdev,
 	if (value > mfd->panel_info->brightness_max)
 		value = mfd->panel_info->brightness_max;
 
-<<<<<<< HEAD
-=======
 	if (value < SMARTDIM_MIN && value != 0) {
 		bl_lvl_real = value;
 		value = SMARTDIM_MIN;
@@ -295,7 +289,6 @@ static void mdss_fb_set_bl_brightness(struct led_classdev *led_cdev,
 		bl_to_pcc(bl_lvl_real);
 	}
 
->>>>>>> acd447140b2... mdss: initial smart dim implementation
 	/* This maps android backlight level 0 to 255 into
 	   driver backlight level 0 to bl_max with rounding */
 	MDSS_BRIGHT_TO_BL(bl_lvl, value, mfd->panel_info->bl_max,
